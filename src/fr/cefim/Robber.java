@@ -1,6 +1,6 @@
 package fr.cefim;
 
-public class Robber extends Human {
+public class Robber extends Human implements Outlaw {
 
     private String look;
     private int numberKidnappedLadies;
@@ -23,7 +23,7 @@ public class Robber extends Human {
             numberKidnappedLadies++;
             response += "Haha! " + lady.getName() + " you are mine now";
         } else {
-            response += "You are already my prisoner";
+            response += "You are already prisoner";
         }
         return response;
     }

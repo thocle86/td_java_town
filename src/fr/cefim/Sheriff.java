@@ -3,6 +3,7 @@ package fr.cefim;
 public class Sheriff extends Cowboy {
 
     private int numberArrestedRobber;
+
     Sheriff(String name) {
         super(name);
         this.numberArrestedRobber = 0;

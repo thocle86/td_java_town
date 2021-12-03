@@ -12,7 +12,7 @@ public class Cowboy extends Human {
         this.look = "Valiant";
     }
 
-    public String shootARobber(Robber robber) {
+    public String shootARobber(Outlaw robber) {
         String response = "";
         if (!robber.isPrisoner()) {
             popularity++;
