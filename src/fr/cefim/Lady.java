@@ -1,6 +1,6 @@
 package fr.cefim;
 
-public class Lady extends Human{
+public class Lady extends Human {
 
     private String colorDress;
     private boolean free;

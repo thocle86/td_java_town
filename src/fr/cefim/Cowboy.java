@@ -1,6 +1,6 @@
 package fr.cefim;
 
-public class Cowboy extends Human{
+public class Cowboy extends Human {
 
     private int popularity;
     private String look;

@@ -1,6 +1,6 @@
 package fr.cefim;
 
-public class Robber extends  Human{
+public class Robber extends Human {
 
     private String look;
     private int numberKidnappedLadies;
