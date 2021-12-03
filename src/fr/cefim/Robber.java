@@ -45,4 +45,9 @@ public class Robber extends  Human{
     public boolean isPrisoner() {
         return prisoner;
     }
+
+    @Override
+    public String getName() {
+        return super.getName() + " the " + look;
+    }
 }

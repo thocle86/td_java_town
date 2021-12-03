@@ -41,4 +41,9 @@ public class Lady extends Human{
     public boolean isFree() {
         return free;
     }
+
+    @Override
+    public String getName() {
+        return "Miss " + super.getName();
+    }
 }
