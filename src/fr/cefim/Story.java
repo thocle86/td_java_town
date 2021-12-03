@@ -42,5 +42,18 @@ public class Story {
         Barman barman = new Barman("Jack");
         barman.speak(barman.present());
         barman.speak(barman.serveADrink(cowboy));
+
+        System.out.println("--------------------------------------------");
+        System.out.println("***Parts 1.6***");
+        System.out.println("--------------------------------------------");
+        Sheriff sheriff = new Sheriff("Woody");
+        sheriff.speak(sheriff.present());
+
+        System.out.println("--------------------------------------------");
+        System.out.println("***Parts 1.7***");
+        System.out.println("--------------------------------------------");
+        Cowboy clint = new Sheriff("Clint");
+        clint.speak(clint.present());
+        clint.speak(clint.stopARobber());
     }
 }

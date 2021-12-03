@@ -47,6 +47,10 @@ public class Robber extends Human {
         return "We offer " + rewardOffered + " dollars for my capture";
     }
 
+    public void setRewardOffered(int rewardOffered) {
+        this.rewardOffered = rewardOffered;
+    }
+
     public boolean isPrisoner() {
         return prisoner;
     }
