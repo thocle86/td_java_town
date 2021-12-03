@@ -7,35 +7,40 @@ public class Lady extends Human{
 
     Lady(String name, String colorDress) {
         super(name);
+        super.setFavoriteDrink("milk");
         this.colorDress = colorDress;
         this.free = true;
     }
 
-    public void toBeKidnapped() {
+    public String toBeKidnapped() {
+        String response = "";
         if (free) {
             free = false;
-            System.out.println("Haaaa, help me !!!");
+            response += "Haaaa, help me !!!";
         } else {
-            System.out.println("Free me please");
+            response += "Free me please";
         }
+        return response;
     }
 
-    public void toBeReleased(Cowboy cowboy) {
+    public String toBeReleased(Cowboy cowboy) {
+        String response = "";
         if (!free) {
             free = true;
-            System.out.println("Thank you " + cowboy.getName() + " the cowboy, you are my hero");
+            response += "Thank you " + cowboy.getName() + " the cowboy, you are my hero";
         } else {
-            System.out.println("Are you free for a drink, lady ?");
+            response += "Are you free for a drink, lady ?";
         }
+        return response;
     }
 
     public String getColorDress() {
-        return colorDress;
+        return "Look my " + colorDress + " dress";
     }
 
-    public void setColorDress(String colorDress) {
+    public String setColorDress(String colorDress) {
         this.colorDress = colorDress;
-        System.out.println("Look at my new " + colorDress + " dress");
+        return "Look at my new " + colorDress + " dress";
     }
 
     public boolean isFree() {
@@ -45,5 +50,13 @@ public class Lady extends Human{
     @Override
     public String getName() {
         return "Miss " + super.getName();
+    }
+
+    @Override
+    public String present() {
+        String response = "";
+        response += super.present() + "\n";
+        response += getColorDress();
+        return response;
     }
 }

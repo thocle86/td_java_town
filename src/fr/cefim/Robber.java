@@ -9,37 +9,42 @@ public class Robber extends  Human{
 
     Robber(String name) {
         super(name);
+        super.setFavoriteDrink("twist-gutters");
         this.look = "Bad";
         this.numberKidnappedLadies = 0;
         this.rewardOffered = 100;
         this.prisoner = false;
     }
 
-    public void kidnapALady(Lady lady) {
+    public String kidnapALady(Lady lady) {
+        String response = "";
         if (lady.isFree()) {
             lady.toBeKidnapped();
             numberKidnappedLadies++;
-            System.out.println("Haha! " + lady.getName() + " you are mine now");
+            response += "Haha! " + lady.getName() + " you are mine now";
         } else {
-            System.out.println("You are already my prisoner");
+            response += "You are already my prisoner";
         }
+        return response;
     }
 
-    public void toBeAPrisoner(Cowboy cowboy) {
+    public String toBeAPrisoner(Cowboy cowboy) {
+        String response = "";
         if (!prisoner) {
             prisoner = true;
-            System.out.println("Damned, I'm done ! " + cowboy.getName() + " you got me !");
+            response += "Damned, I'm done ! " + cowboy.getName() + " you got me !";
         } else {
-            System.out.println("Haaaaa, free me or I'll kill you");
+            response += "Haaaaa, free me or I'll kill you";
         }
+        return response;
     }
 
-    public int getNumberKidnappedLadies() {
-        return numberKidnappedLadies;
+    public String getNumberKidnappedLadies() {
+        return "I kidnapped " + numberKidnappedLadies + " ladies";
     }
 
-    public int getRewardOffered() {
-        return rewardOffered;
+    public String getRewardOffered() {
+        return "We offer " + rewardOffered + " dollars for my capture";
     }
 
     public boolean isPrisoner() {
@@ -49,5 +54,14 @@ public class Robber extends  Human{
     @Override
     public String getName() {
         return super.getName() + " the " + look;
+    }
+
+    @Override
+    public String present() {
+        String response = "";
+        response += super.present() + "\n";
+        response += getNumberKidnappedLadies() + "\n";
+        response += getRewardOffered();
+        return response;
     }
 }

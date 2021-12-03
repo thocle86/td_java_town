@@ -7,30 +7,44 @@ public class Cowboy extends Human{
 
     Cowboy(String name) {
         super(name);
+        super.setFavoriteDrink("whisky");
         this.popularity = 0;
         this.look = "Valiant";
     }
 
-    public void shootARobber(Robber robber) {
+    public String shootARobber(Robber robber) {
+        String response = "";
         if (!robber.isPrisoner()) {
             popularity++;
-            System.out.println("The " + look + " " + super.getName() + " shoots " + robber.getName() + ". PAN !");
-            System.out.println("Take that rascal");
+            response += "The " + look + " " + super.getName() + " shoots " + robber.getName() + ". PAN !\n";
+            response += "Take that rascal";
         } else {
-            System.out.println("You're lucky to be a prisoner");
+            response += "You're lucky to be a prisoner";
         }
+        return response;
     }
 
-    public void freeALady(Lady lady) {
+    public String freeALady(Lady lady) {
+        String response = "";
         if (!lady.isFree()) {
             lady.toBeReleased(this);
-            System.out.println("You look lovely in that " + lady.getColorDress() + " dress");
+            response += "You look lovely in that " + lady.getColorDress() + " dress";
         } else {
-            System.out.println("Are you free for a drink, lady ?");
+            response += "Are you free for a drink, lady ?";
         }
+        return response;
     }
 
-    public int getPopularity() {
-        return popularity;
+    public String getPopularity() {
+        return "My popularity is " + popularity;
+    }
+
+    @Override
+    public String present() {
+        String response = "";
+        response += super.present() + "\n";
+        response += "People say I'm " + look + "\n";
+        response += getPopularity();
+        return response;
     }
 }

@@ -11,15 +11,15 @@ public class Human {
     }
 
     public void speak(String text) {
-        System.out.println(name + " - " + text);
+        System.out.println("(" + name + ")" + " - " + text);
     }
 
-    public void present() {
-        System.out.println("Hello, my name is " + name + ", my favorite drink is " + favoriteDrink);
+    public String present() {
+        return "Hello, my name is " + name + ", my favorite drink is " + favoriteDrink;
     }
 
-    public void drink() {
-        System.out.println("Aaaah, a good glass of " + favoriteDrink + " ! GLOUPS !");
+    public String drink() {
+        return "Aaaah, a good glass of " + favoriteDrink + " ! GLOUPS !";
     }
 
     public String getName() {
@@ -28,5 +28,9 @@ public class Human {
 
     public String getFavoriteDrink() {
         return favoriteDrink;
+    }
+
+    public void setFavoriteDrink(String favoriteDrink) {
+        this.favoriteDrink = favoriteDrink;
     }
 }
