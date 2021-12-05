@@ -1,6 +1,6 @@
 package fr.cefim;
 
-public class Robber extends Human implements Outlaw {
+public class Robber extends Human implements Outlaw, PaleFace {
 
     private String look;
     private int numberKidnappedLadies;
@@ -19,9 +19,9 @@ public class Robber extends Human implements Outlaw {
     public String kidnapALady(Lady lady) {
         String response = "";
         if (lady.isFree()) {
-            lady.toBeKidnapped();
             numberKidnappedLadies++;
-            response += "Haha! " + lady.getName() + " you are mine now";
+            response += "Haha! " + lady.getName() + " you are mine now\n";
+            response += Human.speak(lady.toBeKidnapped(), lady);
         } else {
             response += "You are already prisoner";
         }

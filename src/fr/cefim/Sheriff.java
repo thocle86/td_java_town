@@ -11,7 +11,7 @@ public class Sheriff extends Cowboy {
 
     public String stopARobber(Robber robber) {
         numberArrestedRobber++;
-        return robber.getName() + "In the name of the law, I stop you!";
+        return robber.getName() + ". In the name of the law, I stop you!";
     }
 
     public String searchARobber(Robber robber) {

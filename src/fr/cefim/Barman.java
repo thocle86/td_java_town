@@ -8,6 +8,7 @@ public class Barman extends Human {
         super(name);
         super.setFavoriteDrink("wine");
         this.nameBar = super.getName() + " House";
+        super.setSpecialSpeak("coco !");
     }
 
     Barman(String name, String nameBar) {
@@ -22,11 +23,6 @@ public class Barman extends Human {
         response += super.present() + "\n";
         response += "The name of my bar is " + nameBar;
         return response;
-    }
-
-    @Override
-    public void speak(String text) {
-        super.speak(text + " COCO");
     }
 
     public String serveADrink(Human human) {

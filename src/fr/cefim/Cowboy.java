@@ -1,6 +1,6 @@
 package fr.cefim;
 
-public class Cowboy extends Human {
+public class Cowboy extends Human implements PaleFace {
 
     private int popularity;
     private String look;
@@ -9,7 +9,7 @@ public class Cowboy extends Human {
         super(name);
         super.setFavoriteDrink("whisky");
         this.popularity = 0;
-        this.look = "Valiant";
+        this.look = "valiant";
     }
 
     public String shootARobber(Outlaw robber) {
@@ -27,8 +27,8 @@ public class Cowboy extends Human {
     public String freeALady(Lady lady) {
         String response = "";
         if (!lady.isFree()) {
-            lady.toBeReleased(this);
-            response += "You look lovely in that " + lady.getColorDress() + " dress";
+            response += "You look lovely in that " + lady.getColorDress() + " dress\n";
+            response += Human.speak(lady.toBeReleased(this), lady);
         } else {
             response += "Are you free for a drink, lady ?";
         }
